@@ -59,6 +59,9 @@ public class MyLinkedListImpl<TYPE extends Comparable<TYPE>> implements MyLinked
 	
 	@Override
 	public void removeValueGreaterThan(TYPE target) {
+		if(target == null) {
+			throw new RuntimeException("Data must implement Comparable Interface");
+		}
 		Node<TYPE> pointer = lastNode;
 		while (pointer!=null) {
 			TYPE data = pointer.getData();
